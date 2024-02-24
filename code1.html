@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+</head>
+<body>
+    <div id="01">
+    <pre>
+        // C++ program for the above approach
+#include &lt; bits/stdc++.h &gt;
+
+#define max 20
+using namespace std;
+
+// Structure of Employee
+struct employee {
+	string name;
+	long int code;
+	string designation;
+	int exp;
+	int age;
+};
+
+int num;
+void showMenu();
+
+// Array of Employees to store the
+// data in the form of the Structure
+// of the Array
+employee emp[max], tempemp[max],
+	sortemp[max], sortemp1[max];
+
+// Function to build the given datatype
+void build()
+{
+	cout &lt;&lt; "Build The Table\n";
+	cout &lt;&lt; "Maximum Entries can be "
+    &lt;&lt; max &lt;&lt; "\n";
+
+	cout &lt;&lt; "Enter the number of "
+    &lt;&lt; "Entries required";
+	cin &gt; num;
+
+	if (num &gt; 20) {
+		cout &lt;&lt; "Maximum number of "
+        &lt;&lt; "Entries are 20\n";
+		num = 20;
+	}
+	cout &lt;&lt; "Enter the following data:\n";
+
+	for (int i = 0; i &lt; num; i++) {
+		cout &lt;&lt; "Name ";
+		cin &gt;&gt; emp[i].name;
+
+		cout &lt;&lt; "Employee ID ";
+		cin &gt;&gt; emp[i].code;
+
+		cout &lt; "Designation ";
+		cin &gt;&gt; emp[i].designation;
+
+		cout &lt;&lt; "Experience ";
+		cin &gt;&gt; emp[i].exp;
+
+		cout &lt;&lt; "Age ";
+		cin &gt;&gt; emp[i].age;
+	}
+
+	showMenu();
+}
+
+// Function to insert the data into
+// given data type
+void insert()
+{
+	if (num &lt; max) {
+		int i = num;
+		num++;
+
+		cout &lt;&lt; "Enter the information "
+			&lt;&lt; "of the Employee\n";
+		cout &lt;&lt; "Name ";
+		cin >> emp[i].name;
+
+		cout &lt;&lt; "Employee ID ";
+		cin >> emp[i].code;
+
+		cout &lt;&lt; "Designation ";
+		cin >> emp[i].designation;
+
+		cout &lt;&lt; "Experience ";
+		cin >> emp[i].exp;
+
+		cout &lt;&lt; "Age ";
+		cin >> emp[i].age;
+	}
+	else {
+		cout &lt;&lt; "Employee Table Full\n";
+	}
+
+	showMenu();
+}
+
+// Function to delete record at index i
+void deleteIndex(int i)
+{
+	for (int j = i; j&lt; num - 1; j++) {
+		emp[j].name = emp[j + 1].name;
+		emp[j].code = emp[j + 1].code;
+		emp[j].designation
+			= emp[j + 1].designation;
+		emp[j].exp = emp[j + 1].exp;
+		emp[j].age = emp[j + 1].age;
+	}
+	return;
+}
+
+// Function to delete record
+void deleteRecord()
+{
+	cout &lt;&lt; "Enter the Employee ID "
+		&lt;&lt; "to Delete Record";
+
+	int code;
+
+	cin >> code;
+	for (int i = 0; i &lt; num; i++) {
+		if (emp[i].code == code) {
+			deleteIndex(i);
+			num--;
+			break;
+		}
+	}
+	showMenu();
+}
+
+void searchRecord()
+{
+	cout &lt;&lt; "Enter the Employee"
+		&lt;&lt; " ID to Search Record";
+
+	int code;
+	cin >> code;
+
+	for (int i = 0; i &lt; num; i++) {
+
+		// If the data is found
+		if (emp[i].code == code) {
+			cout &lt;&lt; "Name "
+				&lt;&lt; emp[i].name &lt;&lt; "\n";
+
+			cout &lt;&lt; "Employee ID "
+				&lt;&lt; emp[i].code &lt;&lt; "\n";
+
+			cout &lt;&lt; "Designation "
+				&lt;&lt; emp[i].designation &lt;&lt; "\n";
+
+			cout &lt;&lt; "Experience "
+				&lt;&lt; emp[i].exp &lt;&lt; "\n";
+
+			cout &lt;&lt; "Age "
+				&lt;&lt; emp[i].age &lt;&lt; "\n";
+			break;
+		}
+	}
+
+	showMenu();
+}
+
+// Function to show menu
+void showMenu()
+{
+
+	cout &lt;&lt; "-------------------------"
+		&lt;&lt; "GeeksforGeeks Employee"
+		&lt;&lt; " Management System"
+		&lt;&lt; "-------------------------\n\n";
+
+	cout &lt;&lt; "Available Options:\n\n";
+	cout &lt;&lt; "Build Table		 (1)\n";
+	cout &lt;&lt; "Insert New Entry (2)\n";
+	cout &lt;&lt; "Delete Entry	 (3)\n";
+	cout &lt;&lt; "Search a Record	 (4)\n";
+	cout &lt;&lt; "Exit			 (5)\n";
+
+	int option;
+
+	// Input Options
+	cin >> option;
+
+	// Call function on the basis of the
+	// above option
+	if (option == 1) {
+		build();
+	}
+	else if (option == 2) {
+		insert();
+	}
+	else if (option == 3) {
+		deleteRecord();
+	}
+	else if (option == 4) {
+		searchRecord();
+	}
+	else if (option == 5) {
+		return;
+	}
+	else {
+		cout &lt;&lt; "Expected Options"
+			&lt;&lt; " are 1/2/3/4/5";
+		showMenu();
+	}
+}
+
+// Driver Code
+int main()
+{
+
+	showMenu();
+	return 0;
+}
+    </pre>
+</div>
+</body>
+
+</html>
