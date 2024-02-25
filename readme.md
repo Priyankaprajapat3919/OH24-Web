@@ -1,18 +1,22 @@
-# Team Promotion Website
+# OpenHack Team Quiz
 
-Welcome to the Team Promotion Website project! This web application is designed to showcase and promote team members within an organization. Whether you want to highlight achievements, skills, or recent projects, this website serves as a central hub for celebrating your team.
+Welcome to the OpenHack Team Quiz, a fun and interactive quiz game designed to foster team bonding and collaboration within OpenHack. This web application aims to help teammates get to know each other better in a lighthearted manner. The game features questions based on participating teammates, encouraging interaction and learning.
 
-## Table of Contents
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+# Features
+Personalized Questions: Questions are tailored to participating teammates, ensuring a personalized and engaging experience.
+Score Tracking: A scorecard keeps track of individual scores, and the highest scorer is highlighted.
+No Database Required: The game operates without a database, making it easy to set up and accessible to participants with diverse technical backgrounds.
+User-Friendly Interface: An intuitive platform designed for a seamless and enjoyable experience.
 
+# Usage
 
-## Getting Started
+Open the web application in a browser.
+Enter your name or a fun nickname to get started.
+Answer the personalized questions about your teammates.
+See your score and discover who the highest scorer is at the end.
+Customize Questions
 
-### Prerequisites
-
-
-### Installation
+# techonology used 
+# html
+# css
+# java script
